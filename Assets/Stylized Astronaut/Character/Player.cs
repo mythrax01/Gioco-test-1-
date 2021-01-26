@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-		private Animator anim;
+		Animator anim;
 		float movx, movz; // Variabili per memorizzare l'input del controller 
 		Rigidbody rb;
 		public float speed; // Setto la velocità di movimento 
@@ -83,7 +83,7 @@ public class Player : MonoBehaviour {
 			transform.position = Respawn.transform.position;
 			//Destroy(collision.gameObject);//distrugge l'oggetto contro cui va a sbattere 
 			//print("DEAD");// stamperà ostacolo
-			anim.SetBool("DIE", true); //Se tocco il nemico muoio
+			anim.SetBool("die", true); //Se tocco il nemico muoio
 			Morto = true; 
 		}
 	}
