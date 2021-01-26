@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
 		public Vector3 mass;
 		//public Text DEAD;
 		public GameObject Respawn;
+		public GameObject Respawn2;
 		public bool Morto;// variabile morto 
 
 	void Start () 
@@ -55,7 +56,8 @@ public class Player : MonoBehaviour {
 			if(vel>0){
 					anim.SetBool("isidle", true);
 
-			}else{
+			}
+			else{
 				anim.SetBool("isidle", false);
 
 			}
@@ -90,9 +92,16 @@ public class Player : MonoBehaviour {
 			//DEAD.text = "DEAD";
 			transform.position = Respawn.transform.position;
 			//Destroy(collision.gameObject);//distrugge l'oggetto contro cui va a sbattere 
-			//print("DEAD");// stamper� ostacolo
+			//DEAD.text= print("DEAD");// stamper� ostacolo
 			anim.SetBool("die", true); //Se tocco il nemico muoio
 			Morto = true; 
+		}
+
+		if (collision.gameObject.tag == "Respawn") //se il nostro cubo va a spattere contro questo oggetto
+
+		{
+			print("Respawn");
+			transform.position = Respawn2.transform.position;
 		}
 	}
 }
