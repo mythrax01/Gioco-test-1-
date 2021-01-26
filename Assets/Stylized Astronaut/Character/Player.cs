@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 		public Vector3 mass;
 		//public Text DEAD;
 		public GameObject Respawn;
-		public bool Morto;
+		public bool Morto;// variabile morto 
 
 	void Start () 
 	{
